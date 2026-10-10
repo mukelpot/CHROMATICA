@@ -311,6 +311,10 @@ body.ct-open .snd{opacity:0;pointer-events:none}
 
 /* ---------- index: the cover page of the booklet */
 .ph-index .ph-title{--fsz:clamp(60px,10.5vw,176px)}
+/* CHROMATICA in bold everywhere it appears (the cover, this page and the top bar). Instrument Serif comes in one weight
+   only, so every letter gets an outline that thickens it: the letters are see-through and show the gradient behind
+   them, and the gradient fills the outline too. Browsers that can't do that just show the regular weight. */
+.word,.ph-index .ph-title,.logo span{-webkit-text-stroke-width:.03em}
 /* the index's CHROMATICA takes on the colours of the act you point at (pins and programme panels): its gradient is ten
    registered colours, so it glides from one act's colours to the next instead of jumping */
 @property --h0{syntax:'<color>';inherits:true;initial-value:#eef1fb}
