@@ -481,6 +481,10 @@ body[data-preview="ombre"] .ph-index .ph-title{--h0:#ffe0a0;--h1:#ffce80;--h2:#f
 .song-credits{display:grid;gap:8px;margin:0 0 4px;padding:0;list-style:none}
 .song-credits li{display:grid;grid-template-columns:128px minmax(0,1fr);align-items:baseline;gap:10px;font-family:var(--body);font-size:15.5px;color:var(--ink)}
 .song-credits small{white-space:nowrap;font-family:var(--caps);font-weight:600;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+/* label column as wide as the longest label (e.g. "Choreographed by"), at least the old 128px / 118px */
+.song-meta .song-credits{grid-template-columns:minmax(128px,max-content) minmax(0,1fr);column-gap:10px;row-gap:8px;align-items:baseline}
+.song-meta .song-credits li{display:contents}
+@media (max-width:760px),(max-aspect-ratio:4/5){.song-meta .song-credits{grid-template-columns:minmax(118px,max-content) minmax(0,1fr)}}
 .medley{margin:14px 0 0;font-family:var(--display);font-style:italic;font-size:18px;line-height:1.5;color:var(--ink-2)}
 .voices{margin-top:30px}
 .lbl{display:flex;align-items:center;gap:12px;margin:0 0 8px;font-family:var(--caps);font-weight:600;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
@@ -1140,7 +1144,7 @@ void main(){
         Baritone 1 / Lead: Nickolas
         Bass: Jinning
         VP: Lee Wei
-      `,{photos:["posters/xia-yi-ge-ni.jpg"],arranger:"Kevin Wijono",lang:"zh-Hans",original:"Sherman Zhuo"}),Ka("Breaking Point","SMU INDANCITY",{dancers:Kn(`
+      `,{photos:["posters/xia-yi-ge-ni.jpg"],arranger:"Kevin Wijono",lang:"zh-Hans",original:"Sherman Zhuo"}),Ka("Breaking Point","SMU INDANCITY",{choreo:"Hong Guofeng (SMU INDANCITY)",dancers:Kn(`
           Emberlyn Tham Yoke Wai
           Clara Tan Wen Ying
           Lai In Tung
@@ -1230,7 +1234,7 @@ void main(){
         Baritone: Ryan
         Bass: Jinning
         VP: Lee Wei
-      `,{photos:["posters/from-the-start.jpg"],arranger:"Andre Yong",original:"Laufey",dancersBy:"SMU INDANCITY",dancers:Kn(`
+      `,{choreo:"Andy Benjamin Cai (SMU INDANCITY)",photos:["posters/from-the-start.jpg"],arranger:"Andre Yong",original:"Laufey",dancersBy:"SMU INDANCITY",dancers:Kn(`
           Emberlyn Tham Yoke Wai
           Clara Tan Wen Ying
           Lai In Tung
@@ -1419,10 +1423,10 @@ void main(){
       ${e.groups.map(f=>`<div class="dancers performers"><p class="lbl">${m(f.label)}</p><ul style="${ca(f.names.length)}">${f.names.map(([s,$])=>`<li>${m(s)}${$?` <span class="aka">aka ${m($)}</span>`:""}</li>`).join("")}</ul></div>`).join("")}`:e.guest?a=`<p class="song-n" aria-hidden="true">${o}</p>
       <p class="guest-tag">${xe("spark4","spark")}Special item</p>
       <h2 class="song-title" id="t${o}"${aa(e)}><span class="sr">${o}. </span>${m(e.title)}</h2>
-      <ul class="song-credits"><li><small>Performed by</small><span>${m(e.guest)}</span></li></ul>
+      <ul class="song-credits"><li><small>Performed by</small><span>${m(e.guest)}</span></li>${e.choreo?`<li><small>Choreographed by</small><span>${m(e.choreo)}</span></li>`:""}</ul>
       ${oa(e)}`:a=`<p class="song-n" aria-hidden="true">${o}</p>
       <h2 class="song-title" id="t${o}"${aa(e)}><span class="sr">${o}. </span>${m(e.title)}</h2>
-      ${e.original||e.music||e.arranger?`<ul class="song-credits">${e.original?`<li><small>Originally by</small><span>${m(e.original)}</span></li>`:""}${e.music?`<li><small>Music by</small><span>${m(e.music)}</span></li>`:""}${e.arranger?`<li><small>Arranged by</small><span>${m(e.arranger)}</span></li>`:""}</ul>`:""}
+      ${e.original||e.music||e.arranger||e.choreo?`<ul class="song-credits">${e.original?`<li><small>Originally by</small><span>${m(e.original)}</span></li>`:""}${e.music?`<li><small>Music by</small><span>${m(e.music)}</span></li>`:""}${e.arranger?`<li><small>Arranged by</small><span>${m(e.arranger)}</span></li>`:""}${e.choreo?`<li><small>Choreographed by</small><span>${m(e.choreo)}</span></li>`:""}</ul>`:""}
       ${e.medley&&e.medley.length?`<p class="medley">${e.medley.map(f=>`\u201C${m(f)}\u201D`).join(" \xB7 ")}</p>`:""}
       <div class="voices">
         <p class="lbl">Voices</p>
