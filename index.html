@@ -516,6 +516,8 @@ body[data-preview="ombre"] .ph-index .ph-title{--h0:#ffe0a0;--h1:#ffce80;--h2:#f
 .photos .photo:not(:first-child){--ar:1/1}
 .photos.single{grid-template-columns:1fr}
 .photos.single .photo:first-child{--ar:1588/2246;width:100%;max-width:min(100%,calc((100vh - 190px) * .7071),560px);margin-inline:auto}
+/* side-by-side layout: the poster is as tall as the song details (number to the last name), never wider than its column */
+@media (min-width:1061px) and (min-aspect-ratio:4001/5000){.song-media{position:relative}.song-media .photos.single{position:absolute;inset:0;display:block;container-type:size}.photos.single .photo:first-child{width:calc(min(100cqh, 100cqw / .7071) * .7071);max-width:none;height:auto;margin:0 auto}}
 .song-about{margin-top:34px}
 .song-about p{margin:0 0 1.05em;max-width:62ch;font-family:var(--body);font-size:16.5px;line-height:1.82;color:var(--ink-2);text-shadow:0 1px 14px rgba(4,5,14,.9),0 0 2px rgba(4,5,14,.8)}
 .song.guest .song-n{-webkit-text-stroke-color:rgba(255,255,255,.7)}
