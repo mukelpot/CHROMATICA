@@ -827,12 +827,13 @@ body.nogl .snd{display:none}
 .partners b{font-family:var(--body);font-weight:400;font-size:clamp(17px,1.5vw,21px);line-height:1.25;color:var(--ink);text-wrap:balance}
 @media (max-width:760px),(max-aspect-ratio:4/5){.partners ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px}.pt-logo{height:66px}.partners small{font-size:8.5px;letter-spacing:.16em}.pt-logo img{max-height:66px}}
 /* index: the presenters as a small header strip above "SMU VOIX presents" (logos + tiny labels; no wider than that line) */
-.ph-partners{display:flex;align-items:flex-end;gap:clamp(12px,1.3vw,18px);width:max-content;max-width:100%;margin:0 0 clamp(16px,2.6vh,26px)}
+.ph-partners{display:flex;align-items:flex-start;gap:clamp(12px,1.3vw,18px);width:max-content;max-width:100%;margin:0 0 clamp(16px,2.6vh,26px)}
 .ph-partners>div{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
 .ph-partners .pt-logo{height:26px;width:auto}
 .ph-partners .pt-logo img{max-height:100%;max-width:84px}
 .ph-partners small{white-space:nowrap;font-family:var(--caps);font-weight:600;font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .ph-partners b{display:none}
+.ph-partners small{order:-1}
 @media (max-width:760px),(max-aspect-ratio:4/5){.ph-partners{gap:10px;margin-bottom:16px}.ph-partners .pt-logo{height:22px}.ph-partners .pt-logo img{max-width:70px}.ph-partners small{font-size:5.5px;letter-spacing:.1em}}
 /* v34: the main titles go back to Instrument Serif; everything else stays Times New Roman */
 :root{--title:'Instrument Serif',Didot,'Bodoni 72',Georgia,serif}
