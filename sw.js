@@ -5,8 +5,8 @@
 //  - online, always fetches the booklet fresh, so changes show up straight away, and updates the copy;
 //  - offline, or when the network takes longer than 4 seconds, opens the saved copy instead.
 // Links to other sites (the socials, BookMyShow) are never touched.
-// Changing CACHE (say to 'chromatica-booklet-2') clears every saved copy on the next visit.
-const CACHE = 'chromatica-booklet-2';
+// Changing CACHE (say to 'chromatica-booklet-3') clears every saved copy on the next visit.
+const CACHE = 'chromatica-booklet-3';
 const PAGE = new URL('./', self.registration.scope).href; // the booklet itself: the site's top address
 const WAIT = 4000; // how long to wait for the network (ms) before opening the saved copy
 
