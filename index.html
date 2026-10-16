@@ -838,6 +838,12 @@ body.nogl .snd{display:none}
 /* contents overlay: long titles shrink to their column; no buttons at the foot; the dark backdrop fades out at the bottom */
 .ct-main,.ct-acts>li{container-type:inline-size;min-width:0}
 .ct-list a .t{white-space:nowrap;font-size:min(1em,calc((100cqi - 44px) / (var(--n,8) * .72)))}
+.ct-list a{align-items:center;height:calc(1em + 18px);padding:0}
+.ct-list a .t{line-height:1}
+.ct-n{line-height:1}
+.ct-acts{display:block;columns:2;column-gap:30px}
+.ct-acts>li{break-inside:avoid;margin-bottom:26px}
+@media (max-width:760px),(max-aspect-ratio:4/5){.ct-acts{columns:1}.ct-acts>li{margin-bottom:22px}}
 .ct-acts>li>a .an{white-space:nowrap;font-size:min(1em,calc((100cqi - 20px) / (var(--n,8) * .72)))}
 .contents{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 22vh),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 22vh),transparent 100%)}
 .ct-inner{padding-bottom:26vh}
